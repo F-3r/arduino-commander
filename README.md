@@ -1,7 +1,7 @@
 Commander
 =========
 
-A prototype for ruby library for controlling and communicating with Arduino...
+A prototype for a ruby library for controlling and communicating with Arduino...
 
 exmaples:
 
