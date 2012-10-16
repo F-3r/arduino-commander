@@ -1,7 +1,8 @@
 Commander
 =========
 
-A prototype for a ruby library for controlling and communicating with Arduino...
+Almost a prototype for a ruby library to controll and communicate with Arduino...
+(inspired on Arduino ruby gem, built using CommandMessenger arduino library)
 
 exmaples:
 
