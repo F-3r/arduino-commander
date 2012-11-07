@@ -1,20 +1,22 @@
 Commander
 =========
-
-Almost a prototype for a ruby library to controll and communicate with Arduino from the computer...
-
-(it's a personal experiment, inspired on Arduino ruby gem, built using CommandMessenger arduino library)
-
+Almost a prototype for a ruby library to controll and communicate with Arduino from the computer...  
+(it's a personal experiment, inspired on Arduino ruby gem, built using CommandMessenger arduino library)  
 
 
 ### how to use it ###
 
-* Take the commander.ino sketch (arduino v1.0.1) and burn it on the arduino board
-* write a ruby class that extends Commander
-* implement the setup method (optional)
-* implement loop (this is the actual program)
-* instantiate and send it #run 
+* Take the commander.ino sketch (arduino v1.0.1) and burn it on the arduino board  
+ 
+* write a ruby class that extends Commander:
+  * implement **#loop** method (this is the actual program executed by Arduino)
+  * implement **#setup** method (optional. Is called once, before entering the loop)
+  * implement **#finish** method (optional. Is called once, after leaving the loop and before closing the serial connection)  
+  
+  
+* instantiate and send it **#run**  
   (arduino must be connected to the computer, and you must instantiate your class using the correct port)
+
 
 ### API ###
 
