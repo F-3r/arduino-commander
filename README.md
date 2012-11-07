@@ -1,32 +1,46 @@
 Commander
 =========
 
-Almost a prototype for a ruby library to controll and communicate with Arduino...
-(inspired on Arduino ruby gem, built using CommandMessenger arduino library)
+Almost a prototype for a ruby library to controll and communicate with Arduino from the computer...
 
-exmaples:
+(it's a personal experiment, inspired on Arduino ruby gem, built using CommandMessenger arduino library)
 
-### blink ###
+
+
+### how to use it ###
+
+* Take the commander.ino sketch (arduino v1.0.1) and burn it on the arduino board
+* write a ruby class that extends Commander
+* implement the setup method (optional)
+* implement loop (this is the actual program)
+* instantiate and send it #run 
+  (arduino must be connected to the computer, and you must instantiate your class using the correct port)
+
+### API ###
+
+  Commander class wraps arduino basic input/output functions, 
+  they are used just like if you where programing on the board.
+ 
+
+The currently implemented method are:
+
+
 ```ruby
-require 'commmander.rb'
-
-Commander.new(port: '/dev/ttyUSB0').run do
-  digital_write(13, 1)
-  sleep(1)
-  digital_write(13, 0)
-  sleep(1)
-end
+      digital_read(pin)
+      digital_write(pin, value)
+      analog_read(pin)
+      analog_write(pin, value)
 ```
 
-### led dimmer ###
+### Values ###
 
-```ruby
-require 'commmander.rb'
+  At the present time, there are no constants values for representing HIGH, LOW, and such.
+  Use simple integers:
 
-Commander.new(port: '/dev/ttyUSB0').run do
-  value = analog_read(5)
-  puts value              #dump to console
-  analog_write(11, value)
-  sleep 0.01
-end
-```
+  * HIGH = 1
+  * LOW = 0
+  * 0..255 for analog values (mapping to 0..5 volts)
+
+### example ###
+
+  In [example.rb](example.rb), you'll find a very basic RGB led dimmer, that sends sequence of colors to the board.
