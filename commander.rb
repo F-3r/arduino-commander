@@ -12,11 +12,13 @@ class Commander
   
   def run
     puts "hit Ctrl+C when you're bored..."
+    setup
     begin
       while true
-        instance_eval &Proc.new
+        loop
       end
     rescue Interrupt => e
+      finish
       @serial.close
       puts "bye!"
     end
