@@ -45,4 +45,4 @@ The currently implemented method are:
 
 ### example ###
 
-  In [example.rb](example.rb), you'll find a very basic RGB led dimmer, that sends sequence of colors to the board.
+  In [example.rb](https://github.com/F-3r/commander/blob/master/example.rb), you'll find a very basic RGB led dimmer, that sends sequence of colors to the board.
