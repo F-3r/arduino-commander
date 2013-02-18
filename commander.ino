@@ -62,21 +62,13 @@ void a_write()
 void d_read()
 {
   int  pin  = cmdMessenger.readInt();
-//  char res[50];
-//  String(digitalRead(pin)).toCharArray(res,1);
-//  cmdMessenger.sendCmd(kRES, res);
   Serial.println(digitalRead(pin));
 }
 
 void a_read()
 {
   int pin   = cmdMessenger.readInt();
-
   Serial.println(analogRead(pin));
-//  char res[50];
-//  String(analogRead(pin)).toCharArray(res,50);
-  
-//  cmdMessenger.sendCmd(kRES, res);
 }
 
 void pin_mode()
@@ -143,29 +135,10 @@ long timeoutInterval = 2000; // 2 seconds
 long previousMillis = 0;
 int counter = 0;
 
-void timeout()
-{
-  // blink
-  if (counter % 2)
-    digitalWrite(13, HIGH);
-  else
-    digitalWrite(13, LOW);
-  counter ++;
-}  
-
 void loop() 
 {
   // Process incoming serial data, if any
   cmdMessenger.feedinSerialData();
-  
-  // handle timeout function, if any
-  if (  millis() - previousMillis > timeoutInterval )
-  {
-    timeout();
-    previousMillis = millis();
-  }
-
-  // Loop.
 }
 
 
