@@ -4,7 +4,7 @@ Almost a prototype for a ruby library to controll and communicate with Arduino f
 (it's a personal experiment, inspired on Arduino ruby gem, built using CommandMessenger arduino library)  
 
 
-### how to use it ###
+### How to use it ###
 
 * Take the commander.ino sketch (arduino v1.0.1) and burn it on the arduino board  
  
@@ -47,7 +47,7 @@ The currently implemented method are:
   Neither classes representing Buttons, Switches, Leds, etc. (If you like those abstractions, you can easily build them!)
   As far as Commander knows, these are just pins (that are just Integers!)
   
-### example ###
+### Example ###
 
   In [example.rb](https://github.com/F-3r/commander/blob/master/example.rb), you'll find a very basic RGB led dimmer, that sends sequence of colors to the board.
 
