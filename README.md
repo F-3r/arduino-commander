@@ -1,4 +1,4 @@
-Commander
+Arduino-Commander
 =========
 Almost a prototype for a ruby library to controll and communicate with Arduino from the computer...  
 (it's a personal experiment, inspired on Arduino ruby gem, built using CommandMessenger arduino library)  
@@ -110,7 +110,3 @@ void tone_handler()
     end
   end
   ```
-  
-### TODO  
- * **TEST F-3R!!!! TEST!!** this is such a shame untested library!
- *  make it a gem lazy!
